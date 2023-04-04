@@ -7,13 +7,13 @@ class Positions:
 
     def get_universe(self) -> list[str]:
         '''
-        Return list of stocks keys in portfolio university
+        Return list of stocks keys in portfolio universe
         '''
         return list(self._pos.keys())
     
     def get_positions(self) -> dict[str, float]:
         '''
-        The units of a stock are being held
+        Retuen the units of a stock being held
         '''
         return self._pos
 
@@ -25,7 +25,7 @@ class Broker:
 
     def get_live_price(self) -> dict[str, float]:
         '''
-        Return Dictionary of live stock prices
+        Return a dictionary of live stock prices
         '''
         prices = {asset: random.uniform(10, 30) for asset in \
                   self.positions.get_universe()} 
@@ -33,7 +33,7 @@ class Broker:
         
     def get_positions(self) -> Positions:
         '''
-        Return the Positions of portfolio
+        Return the Positions of Broker
         '''
         return self.positions
 
@@ -47,7 +47,7 @@ class RebalancingSystem:
 
     def target_positions(self) -> dict[str, float]:
         '''
-        Return the dictionary containing target value of each stock
+        Return a dictionary containing target market value of each stock
         '''
         target_holdings = {}
         prices = self.broker.get_live_price()
